@@ -1,9 +1,10 @@
+/* Universal selector*/
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
-
+/*Element Selectors*/
 html,
 body,
 .wrapper {
@@ -117,7 +118,7 @@ button[disabled] {
   resize: none;
   overflow: hidden;
 }
-
+/*Media Query*/
 @media (max-width: 690px) {
   .btn {
     font-size: 1rem;

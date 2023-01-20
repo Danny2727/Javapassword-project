@@ -15,46 +15,50 @@ var generateBtn = document.querySelector("#generate");
 function generatePassword() {
     length = prompt("Choose a password between 8 and 128 characters");
     if (length > 8 && length < 128); {
+        console.log(length);
 
-        if (confirm("Would you like to use uppercase letters.")) {
-            userchoice = userChoice.concat(upperCaseArray);
+        if (confirm("Would you like to use uppercase letters.")); {
+            userChoice = userChoice.concat(upperCaseArray);
+            console.log(userChoice);
         }
-
-        if (confirm("Would you like to use lowercase letters.")) {
+        if (confirm("Would you like to use lowercase letters.")); {
             userChoice = userChoice.concat(lowerCaseArray);
         } 
-        if (confirm("Would you like to inlude numbers.")) {
+        if (confirm("Would you like to inlude numbers.")); {
             userChoice = userChoice.concat(numberValArray);
         } 
         if (confirm("Would you like to include special characters.")) {
             userChoice = userChoice.concat(specCharArray);
         }
         else {
-            console.log("User must select password length and at least one of the password criterias");
+            console.log("User must select password length and at least one of the password criteria");
         }
         
     }
 
+   return userChoice;
 }
-
+// Generates the Password
 function createPassword() {
     var selectedPassword = "";
     for (var i = 0; i < length; i++) {
         var finishedPassword = Math.floor(Math.random() * [userChoice.length]);
-        password = password + userChoice[finishedPassword];
+        selectedPassword = selectedPassword + userChoice[finishedPassword];
     }
+    return selectedPassword;
 }
 
 
 // Write password to the #password input
 function writePassword() {
     var password = generatePassword();
-    var passordNew = createPassword();
-    if (password) {}
+    var passwordNew = createPassword();
     var passwordText = document.querySelector("#password");
-
-    passwordText.value = password;
+    passwordText.value = passwordNew;
 }
+
+ 
+
 
 
 
